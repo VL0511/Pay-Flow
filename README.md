@@ -93,3 +93,26 @@ The project uses custom exceptions to handle errors effectively:
     - **HTTP Status**: 500 (INTERNAL SERVER ERROR).
 
 ---
+
+
+## ⚙️ PayPal Configuration
+
+To use the PayPal integration in this project, you need to have a PayPal account and follow these steps:
+
+1. **Create a PayPal Developer Account**:  
+   Visit the [PayPal Developer Portal](https://developer.paypal.com/) and log in with your PayPal account.
+
+2. **Create an App**:
+   - Navigate to the **Dashboard** and click on **Create App**.
+   - Provide a name for your app and select the appropriate sandbox or live environment.
+   - Once created, you will receive a **Client ID** and **Client Secret**.
+
+3. **Configure the Application**:
+   - Open the `application.yml` file located in `src/main/resources/`.
+   - Replace the placeholders in the `paypal` section with your **Client ID** and **Client Secret**:
+
+   ```yaml
+   paypal:
+     client-id: "your-client-id"
+     client-secret: "your-client-secret"
+     mode: sandbox
