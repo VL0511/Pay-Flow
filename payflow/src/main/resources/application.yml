@@ -1,0 +1,42 @@
+server:
+    port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/payflow?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: ""
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+jwt:
+  secret-key: "vQu+kRwPAO7lO+SEZOJ5C/Jr157Hrlv/jds4SAKoyoL0mfMzwsa8uGuYqRQeYAGFPvKE7tN+/pRNNKHSnxbRjg=="
+  validity: 86400000
+
+logging:
+  level:
+    root: info
+    com.digitalmagic: debug
+    org:
+      hibernate:
+        SQL: warn
+        engine:
+          query:
+            spi:
+              HQLQueryPlan: error
+        event:
+          internal:
+            AbstractFlushingEventListener: error
+
+paypal:
+  client-id: ""
+  client-secret: ""
+  mode: sandbox
